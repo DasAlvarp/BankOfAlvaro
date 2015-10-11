@@ -27,6 +27,7 @@ public class Bank
         }
     }
 
+    //returns shortest length in array of cashiers
     private int Shortest(Cashier[] cashiers)
     {
         int sh = 0;
