@@ -6,5 +6,20 @@ import java.util.Queue;
  */
 public class Cashier
 {
-    private Queue customers = new LinkedList()<Customer>;
+    private Queue customers = new LinkedList();
+
+    public Cashier()
+    {
+
+    }
+
+    public void addCustomer(Customer custom)
+    {
+        customers.add(custom);
+    }
+
+    public int length()
+    {
+        return customers.size();
+    }
 }
