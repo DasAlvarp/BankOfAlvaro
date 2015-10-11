@@ -20,6 +20,18 @@ public class Customer implements Comparable
     @Override
     public int compareTo(Object o)
     {
-        return 0;
+        Customer comparer = (Customer)o;
+        if(comparer.in < this.in)
+        {
+            return 1;
+        }
+        else if(comparer.in == this.in)
+        {
+            return 0;
+        }
+        else
+        {
+            return -1;
+        }
     }
 }
