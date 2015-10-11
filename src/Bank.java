@@ -7,11 +7,13 @@ public class Bank
     Queue events = new PriorityQueue();
     Cashier cashiers[];
     Utiler ute = new Utiler();
+    public int time;
 
     // takes in number of cashiers, inter arrival meahn and variance, service *mean and variance time* and total time
     Bank(int cash, int interArriveMean, int interArriveVar, int meanService, int varService, int time)
     {
         cashiers = new Cashier[cash];//make all necesarry cashiers
+        this.time = time;
 
         //fill cashiers
         for(int x = 0; x < cash; x++)
@@ -25,6 +27,11 @@ public class Bank
             cashiers[Shortest(cashiers)].addCustomer(new Customer(x, meanService, varService)); //makes new cashiers. Adds a customer to the shoertest cashier's line.
             System.out.println("added customer at time " + x);
         }
+    }
+
+    public void Output(int interval)
+    {
+
     }
 
     //returns shortest length in array of cashiers

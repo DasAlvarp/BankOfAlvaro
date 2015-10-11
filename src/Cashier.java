@@ -1,4 +1,7 @@
+import java.awt.*;
+import java.lang.reflect.Array;
 import java.util.LinkedList;
+import java.util.PriorityQueue;
 import java.util.Queue;
 
 /**
@@ -15,12 +18,14 @@ public class Cashier
         length = 0;
     }
 
+    //adds a customer
     public void addCustomer(Customer custom)
     {
         customers.add(custom);
         length += 1;
     }
 
+    //removes from customers
     public void removeCustomer()
     {
         if(length > 0)
@@ -38,4 +43,17 @@ public class Cashier
     {
         return length;
     }
+
+    //returns a list of events as well as relevant statistics.
+    public EventSet eventList(int timeLimit)
+    {
+        LinkedList cust = new LinkedList<Customer>();
+        for(int x = 0; x < customers.size(); x++)
+        {
+            cust.add(customers.toArray()[x]);//silly workaround. Probably a bad idea.
+        }
+
+        return new EventSet(cust);
+    }
+
 }

@@ -5,6 +5,26 @@ import java.util.Comparator;
  */
 public class Customer implements Comparable
 {
+    public int getIn()
+    {
+        return in;
+    }
+
+    public void setIn(int in)
+    {
+        this.in = in;
+    }
+
+    public int getOut()
+    {
+        return out;
+    }
+
+    public void setOut(int out)
+    {
+        this.out = out;
+    }
+
     public int in;
     public int out;
     private Utiler ute = new Utiler();
@@ -34,4 +54,5 @@ public class Customer implements Comparable
             return -1;
         }
     }
+
 }
